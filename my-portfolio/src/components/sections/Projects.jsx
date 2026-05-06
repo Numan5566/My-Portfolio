@@ -44,6 +44,17 @@ export default function Projects() {
         "Implements secure PIN verification, withdrawals, deposits, and statements.",
         "Written using advanced OOP methodologies, error-handling, and loops."
       ]
+    },
+    {
+      title: "Real-Time Bus Tracking App",
+      icon: "pi pi-map-marker",
+      technologies: ["Kotlin", "Android SDK", "Google Maps API", "GPS Tracking"],
+      details: [
+        "A robust mobile application that tracks school or university buses in real time.",
+        "Integrated Google Maps API to render exact routes, stops, and dynamic arrival times (ETA).",
+        "Reduces student waiting times and enhances transit safety through precise live GPS coordinates.",
+        "Implemented secure background services for persistent location coordinates streaming."
+      ]
     }
   ];
 

@@ -14,11 +14,11 @@ export default function Resume() {
     },
     {
       year: "2018 - 2020",
-      title: "Intermediate in Computer Science (ICS)",
-      institution: "Government College, Lahore",
+      title: "F.Sc. Pre-Engineering",
+      institution: "KIPS College, Lahore",
       details: [
-        "Acquired foundational knowledge in C++, Computer Architectures, and Mathematics.",
-        "Maintained high academic standing and led several programming club events."
+        "Built advanced analytical and mathematical skills in Physics, Chemistry, and Mathematics.",
+        "Maintained high academic standing and consistently excelled in logical problem-solving contests."
       ]
     }
   ];

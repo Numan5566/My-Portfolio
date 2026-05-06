@@ -55,9 +55,9 @@ export default function About() {
           ))}
         </div>
 
-        <button className="btn-primary" onClick={handleDownloadCV}>
+        <a href="/M.Numan_CV.docx" download="M.Numan_CV.docx" className="btn-primary">
           Download CV <i className="pi pi-download"></i>
-        </button>
+        </a>
       </motion.div>
     </section>
   );
