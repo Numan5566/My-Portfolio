@@ -1,32 +1,88 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
+  };
+
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <motion.div
         className="hero-left"
-        initial={{ opacity: 0, x: -80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <p>Hello, I'm</p>
-        <h1>Muhammad Numan</h1>
-        <h3>Full Stack Developer</h3>
+        <motion.span className="welcome-tag" variants={itemVariants}>
+          Welcome to my portfolio
+        </motion.span>
 
-        <p>
-          I build scalable web applications using React, Node.js & PostgreSQL.
-        </p>
+        <motion.h1 variants={itemVariants}>
+          Hi, I'm <span>Muhammad Numan</span>
+        </motion.h1>
 
-        <button className="btn">Hire Me</button>
+        <motion.h3 variants={itemVariants}>
+          Full-Stack Web Developer & Software Engineer
+        </motion.h3>
+
+        <motion.p className="hero-desc" variants={itemVariants}>
+          I design and build highly performant ERP systems, POS solutions, and modern web applications with secure backend architectures, robust database schemas, and stunning user interfaces.
+        </motion.p>
+
+        <motion.div className="hero-buttons" variants={itemVariants}>
+          <button className="btn-primary" onClick={() => scrollToSection("contact")}>
+            Hire Me <i className="pi pi-briefcase"></i>
+          </button>
+          <button className="btn-secondary" onClick={() => scrollToSection("projects")}>
+            See My Works <i className="pi pi-arrow-right"></i>
+          </button>
+        </motion.div>
+
+        <motion.div className="social-container" variants={itemVariants}>
+          <span>Connect:</span>
+          <div className="social-links">
+            <a href="https://github.com/Numan5566" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i className="pi pi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-numan-8656b1406/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i className="pi pi-linkedin"></i>
+            </a>
+            <a href="mailto:Numannaeem134@gmail.com" title="Email">
+              <i className="pi pi-envelope"></i>
+            </a>
+            <a href="tel:+923259773687" title="Phone">
+              <i className="pi pi-phone"></i>
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
 
       <motion.div
         className="hero-right"
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, type: "spring", bounce: 0.25 }}
       >
-        <img src="/assets/profile.png" alt="Muhammad Numan" />
+        <div className="image-wrapper">
+          <img src="/assets/images/profile.png" alt="Muhammad Numan" />
+        </div>
+        <div className="glow-ring"></div>
       </motion.div>
     </section>
   );
