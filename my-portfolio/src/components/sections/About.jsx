@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function About() {
   const details = [
     { label: "Name", value: "Muhammad Numan" },
-    { label: "Birthday", value: "January 15, 2002" },
+    { label: "Birthday", value: "June 12, 2003" },
     { label: "Phone", value: "+92-3259773687" },
     { label: "Email", value: "Numannaeem134@gmail.com" },
     { label: "Address", value: "Lahore, Pakistan" },
@@ -18,18 +18,6 @@ export default function About() {
 
   return (
     <section className="about" id="about">
-      <motion.div
-        className="about-img"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="img-frame">
-          <img src="/assets/images/profile.png" alt="About Muhammad Numan" />
-        </div>
-      </motion.div>
-
       <motion.div
         className="about-text"
         initial={{ opacity: 0, x: 50 }}
@@ -55,9 +43,9 @@ export default function About() {
           ))}
         </div>
 
-        <button className="btn-primary" onClick={handleDownloadCV}>
+        <a href="/M.Numan_CV.docx" download="M.Numan_CV.docx" className="btn-primary">
           Download CV <i className="pi pi-download"></i>
-        </button>
+        </a>
       </motion.div>
     </section>
   );
